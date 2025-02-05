@@ -1,0 +1,14 @@
+Employee.Api/bin
+Employee.Api/obj
+
+Employee.Application/bin
+Employee.Application/obj
+
+Employee.Core/bin
+Employee.Core/obj
+
+Employee.Data/bin
+Employee.Data/obj
+
+Employee.Migration/bin
+Employee.Migration/obj
