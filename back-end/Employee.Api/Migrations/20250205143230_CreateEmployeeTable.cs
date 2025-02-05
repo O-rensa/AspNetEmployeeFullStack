@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
-namespace Employee.Api.Data.Migrations
+namespace Employee.Api.Migrations
 {
     /// <inheritdoc />
     public partial class CreateEmployeeTable : Migration

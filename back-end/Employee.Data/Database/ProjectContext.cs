@@ -1,7 +1,7 @@
 ﻿using Employee.Core.Employee;
 using Microsoft.EntityFrameworkCore;
 
-namespace Employee.Api.Data
+namespace Employee.Data.Database
 {
     public class ProjectContext(DbContextOptions<ProjectContext> options) : DbContext(options)
     {

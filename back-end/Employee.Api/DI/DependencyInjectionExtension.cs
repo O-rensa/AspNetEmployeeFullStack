@@ -1,8 +1,9 @@
-﻿using Employee.Api.Data;
-using Employee.Application.Employee;
+﻿using Employee.Application.Employee;
 using Employee.Application.Shared;
+using Employee.Data.Database;
 using Employee.Data.Database.Employee;
 using Employee.Data.Shared;
+using Microsoft.EntityFrameworkCore;
 
 namespace Employee.Api.DI
 {
@@ -13,14 +14,12 @@ namespace Employee.Api.DI
             // Application Dependencies
             builder.Services.AddScoped<IEmployeeService, EmployeeService>();
 
-            // Core Dependencies
-
             // Data Dependencies
             builder.Services.AddScoped<IEmployeeRepository, EmployeeDatabaseRepository>();
 
-            // Database Dependencies
+            // Create Database Context
             var connString = builder.Configuration.GetConnectionString("MSSQLContext");
-            builder.Services.AddSqlServer<ProjectContext>(connString);
+            builder.Services.AddDbContext<ProjectContext>(options => options.UseSqlServer(connString, b => b.MigrationsAssembly("Employee.Api")));
 
             return builder;
         }

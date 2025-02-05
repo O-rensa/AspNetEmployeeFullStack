@@ -1,4 +1,4 @@
-﻿using Employee.Api.Data;
+﻿using Employee.Data.Database;
 using Microsoft.EntityFrameworkCore;
 
 namespace Employee.Api.MigrationExtension

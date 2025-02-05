@@ -7,7 +7,7 @@ namespace Employee.Api.V1Endpoints.Employee
         public static RouteGroupBuilder MapEmployeeEndpoints(this RouteGroupBuilder builder)
         {
             builder.MapGet("test", (IEmployeeService employeeService) => { 
-                return employeeService.Test();
+               return employeeService.Test();
             });
 
             return builder;
