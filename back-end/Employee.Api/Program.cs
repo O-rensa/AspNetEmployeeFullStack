@@ -12,6 +12,7 @@ builder = builder.InjectDependencies();
 
 // Build App
 var app = builder.Build();
+app.MapGet("/", () => "Server is ready..."); // Server root page
 
 // V1 RouteGroup
 var v1 = app.MapGroup("v1");
