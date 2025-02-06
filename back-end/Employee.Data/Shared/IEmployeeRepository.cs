@@ -13,7 +13,5 @@ namespace Employee.Data.Shared
         Task<EmployeeModel?> UpdateEmployee(EmployeeModel employee);
 
         Task DeleteEmployee(Guid employeeId);
-
-        string TestRepository();
     }
 }

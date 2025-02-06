@@ -1,4 +1,5 @@
 ﻿using Employee.Core.Employee;
+using Employee.Data.Context;
 using Employee.Data.Shared;
 using Microsoft.EntityFrameworkCore;
 
@@ -49,11 +50,6 @@ namespace Employee.Data.Database.Employee
         public async Task DeleteEmployee(Guid employeeId)
         {
             await _projectContext.Employees.Where(e => e.Id == employeeId).ExecuteDeleteAsync();
-        }
-
-        public string TestRepository()
-        {
-            return "Hello From Repository";
         }
     }
 }

@@ -2,6 +2,8 @@ using Employee.Api.DI;
 using Employee.Api.MigrationExtension;
 using Employee.Api.V1Endpoints.Employee;
 
+
+
 var builder = WebApplication.CreateBuilder(args);
 var connString = builder.Configuration.GetConnectionString("MSSQLContext");
 

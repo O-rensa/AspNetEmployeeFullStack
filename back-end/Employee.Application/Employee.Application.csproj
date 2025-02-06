@@ -7,10 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Employee\Dto\" />
-  </ItemGroup>
-
-  <ItemGroup>
+    <ProjectReference Include="..\Employee.Core\Employee.Core.csproj" />
     <ProjectReference Include="..\Employee.Data\Employee.Data.csproj" />
   </ItemGroup>
 

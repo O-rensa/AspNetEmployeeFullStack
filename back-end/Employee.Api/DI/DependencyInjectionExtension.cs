@@ -1,7 +1,7 @@
 ﻿using Employee.Application.Employee;
 using Employee.Application.Shared;
-using Employee.Data.Database;
 using Employee.Data.Database.Employee;
+using Employee.Data.Context;
 using Employee.Data.Shared;
 using Microsoft.EntityFrameworkCore;
 
@@ -19,7 +19,7 @@ namespace Employee.Api.DI
 
             // Create Database Context
             var connString = builder.Configuration.GetConnectionString("MSSQLContext");
-            builder.Services.AddDbContext<ProjectContext>(options => options.UseSqlServer(connString, b => b.MigrationsAssembly("Employee.Api")));
+            builder.Services.AddDbContext<ProjectContext>(options => options.UseSqlServer(connString, b => b.MigrationsAssembly("Employee.Data")));
 
             return builder;
         }
