@@ -1,0 +1,10 @@
+.main {
+    border: 1px solid red;
+    height: 100px;
+    width: 100px;
+
+    position: relative;
+    left: 50vw;
+    top: 50vh;
+    transform: translate(-50%, -50%);
+}
