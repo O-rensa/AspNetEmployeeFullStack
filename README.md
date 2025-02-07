@@ -53,7 +53,7 @@ I will be listing the version of sdks/softwares that I have on my machine. I hav
 
 ![Screenshot1](https://i.postimg.cc/pLfrvSgw/Screenshot-2025-02-07-165934.png)
 
-
+4. Choose the `http` Profile and press F5 on your keyboard.
 
 #### Run the front-end app
 
