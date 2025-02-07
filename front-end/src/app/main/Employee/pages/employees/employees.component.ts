@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { EmployeeServiceProxy } from '../../data/employeeServiceProxy';
 import { GetEmployeeDto } from '../../data/dto/getEmployeeDto';
 import { Router } from '@angular/router';
+import { finalize } from 'rxjs';
 
 @Component({
   selector: 'app-employees',
@@ -41,16 +42,25 @@ export class EmployeesComponent implements OnInit {
       });
   }
 
+  createEmployee(): void {
+    this._router.navigateByUrl("/main/employee/createOrEdit");
+  }
+
   editEmployee(employeeId: string): void {
     const url = "/main/employee/createOrEdit?id=" + employeeId;
     this._router.navigateByUrl(url);
   }
 
   viewEmployee(employeeId: string): void {
-    this._router.navigate(["/main/employee/view", { queryParams: { id: employeeId }}]);
+    const url = "/main/employee/view?id=" + employeeId;
+    this._router.navigateByUrl(url);
   }
 
   deleteEmployee(id: string): void {
-    this._employeeServiceProxy.deleteEmployee(id).subscribe();
+    this._employeeServiceProxy.deleteEmployee(id)
+    .pipe(finalize(() => {
+      this.getEmployees();
+    }))
+    .subscribe();
   }
 }

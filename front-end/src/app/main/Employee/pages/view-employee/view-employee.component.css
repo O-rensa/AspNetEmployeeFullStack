@@ -1,0 +1,20 @@
+.main {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.form-container {
+    width: 60%;
+    border: 1px solid gray;
+    border-radius: 10px;
+}
+
+hr {
+    margin: 0;
+}
+
+.form-header, .form-content {
+    padding: 10px 25px;
+}
