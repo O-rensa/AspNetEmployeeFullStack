@@ -7,6 +7,11 @@ I will be listing the version of sdks/softwares that I have on my machine. I hav
 - Microsof SQL Server 2022 Developer. Available to download [here](https://www.microsoft.com/en/sql-server/sql-server-downloads).
 - Git. Available to download [here](https://git-scm.com/downloads).
 - Visual Studio 2022 Community Edition(Optional). Available to download [here](https://visualstudio.microsoft.com/free-developer-offers/).
+- Angular 19. Can be installed via npm by opening the terminal and running
+
+  ```
+  npm install -g @angular/cli
+  ```
 
 ## How to run?
 
