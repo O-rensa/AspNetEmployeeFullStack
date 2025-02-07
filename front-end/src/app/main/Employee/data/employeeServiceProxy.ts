@@ -4,6 +4,7 @@ import { catchError, Observable } from "rxjs";
 import { baseServerUrl, handleError } from "../../../shared/appConsts";
 import { GetEmployeeDto } from "./dto/getEmployeeDto";
 import { CreateOrEditEmployeeDto } from "./dto/createOrEditEmployeeDto";
+import { GetEmployeeForViewOrEdit } from "./dto/getEmployeeForViewOrEditDto";
 
 @Injectable({
   providedIn: "root",
@@ -18,9 +19,9 @@ export class EmployeeServiceProxy {
     return this.http.get<GetEmployeeDto[]>(url).pipe(catchError(handleError));
   }
   
-  getEmployeeById(id: string): Observable<GetEmployeeDto> {
+  getEmployeeById(id: string): Observable<GetEmployeeForViewOrEdit> {
     const url = this.baseUrl + "getEmployeeById/" + id;
-    return this.http.get<GetEmployeeDto>(url);
+    return this.http.get<GetEmployeeForViewOrEdit>(url);
   }
   
   createEmployee(employee: CreateOrEditEmployeeDto): Observable<any> {

@@ -34,7 +34,7 @@ namespace Employee.Application.Employee
             return res;
         }
 
-        public async Task<GetEmployeeDto?> GetEmployeeById(Guid id)
+        public async Task<GetEmployeeForViewOrUpdateDto?> GetEmployeeById(Guid id)
         {
             var elem = await _employeeRepository.GetById(id);
 
@@ -44,10 +44,13 @@ namespace Employee.Application.Employee
             }
             else
             {
-                return new GetEmployeeDto
+                return new GetEmployeeForViewOrUpdateDto
                 {
-                    EmployeeId= elem.Id,
-                    Name = generateEmployeeName(elem.FirstName, elem.MiddleName, elem.LastName),
+                    Id = elem.Id,
+                    FirstName = elem.FirstName,
+                    MiddleName = elem.MiddleName,
+                    LastName = elem.LastName,
+                    Age = elem.Age,
                     Title = elem.Title,
                 };
             }

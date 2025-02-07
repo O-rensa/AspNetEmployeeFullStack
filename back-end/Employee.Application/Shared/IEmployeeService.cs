@@ -6,7 +6,7 @@ namespace Employee.Application.Shared
     {
         Task<List<GetEmployeeDto>> GetAllEmployee();
 
-        Task<GetEmployeeDto?> GetEmployeeById(Guid id);
+        Task<GetEmployeeForViewOrUpdateDto?> GetEmployeeById(Guid id);
 
         Task CreateOrUpdateEmployee(CreateOrEditEmployeeDto employee);
 
