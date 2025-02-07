@@ -5,7 +5,16 @@ using Employee.Api.V1Endpoints.Employee;
 
 
 var builder = WebApplication.CreateBuilder(args);
-var connString = builder.Configuration.GetConnectionString("MSSQLContext");
+// Allow Any Origin
+builder.Services.AddCors(options =>
+{
+    options.AddDefaultPolicy(policy =>
+    {
+        policy.AllowAnyOrigin()
+            .AllowAnyHeader()
+            .AllowAnyMethod();
+    });
+});
 
 // Dependency Injection
 builder = builder.InjectDependencies();
@@ -22,4 +31,5 @@ v1.MapEmployeeEndpoints();
 // Initiate Migration on Start
 await app.InitializeMigration();
 
+app.UseCors();
 app.Run();

@@ -1,10 +1,30 @@
 .main {
-    border: 1px solid red;
-    height: 100px;
-    width: 100px;
+    width: 100%;
+    padding-top: 5vh;
+}
 
-    position: relative;
-    left: 50vw;
-    top: 50vh;
-    transform: translate(-50%, -50%);
+.header, .content {
+    display: flex;
+    justify-content: center;
+    padding: 10px 0;
+}
+
+.header button {
+    font-size: 1em;
+}
+
+th, td {
+    border: 1px solid black;
+    text-align: center;
+}
+
+td {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 0;
+}
+
+table {
+    width: 60%;
 }
